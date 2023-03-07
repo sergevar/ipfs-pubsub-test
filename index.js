@@ -29,7 +29,14 @@
         repo: ipfsRepoPath,
         config: {
             Addresses: {
-                Swarm: ["/ip4/0.0.0.0/tcp/" + port, "/ip4/127.0.0.1/tcp/"+(port+1)+"/ws"],
+                Swarm: [
+                    "/ip4/0.0.0.0/tcp/" + port,
+                    "/ip6/::/tcp/" + port,
+                    "/ip4/0.0.0.0/tcp/"+(port+1)+"/ws",
+                    // "/ip6/::/tcp/"+(port+1)+"/ws",
+                    "/ip4/0.0.0.0/udp/"+port+"/quic",
+                    "/ip6/::/udp/"+port+"/quic"
+                ],
                 // API: "/ip4/127.0.0.1/tcp/5012",
                 // Gateway: "/ip4/127.0.0.1/tcp/9191",
                 // RPC: "/ip4/127.0.0.1/tcp/4839",
