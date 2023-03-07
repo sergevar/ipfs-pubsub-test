@@ -7,6 +7,7 @@
     const noise = await(await Function('return import("@chainsafe/libp2p-noise")')()).noise;
     const webRTCStar = await(await Function('return import("@libp2p/webrtc-star")')()).webRTCStar;
     const pubsubPeerDiscovery = await(await Function('return import("@libp2p/pubsub-peer-discovery")')()).pubsubPeerDiscovery;
+    const KadDHT = await(await Function('return import("@libp2p/kad-dht")')()).KadDHT;
 
     const randomNumber = (min, max) => { return Math.floor(Math.random() * (max - min + 1)) + min; }
 
@@ -111,7 +112,7 @@
                     maxReservations: 1     // the maximum number of relays to create reservations on
                 }
             },
-
+            dht: KadDHT,
             streamMuxers: [mplex()],
             connectionEncryption: [noise()],
             // we add the Pubsub module we want
