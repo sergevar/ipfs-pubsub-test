@@ -50,7 +50,7 @@
                     // StaticRelays
                 },
                 RelayService: {
-                    Enabled: true
+                    Enabled: false
                 }
             },
             "Discovery": {
