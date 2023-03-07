@@ -55,8 +55,9 @@
             // transports: [tcp()],
             // peerDiscovery: [MulticastDNS],
             peerDiscovery: [
-                pubsubPeerDiscovery()
-                // webRTC.discovery
+                pubsubPeerDiscovery(),
+                webRTC.discovery,
+                // MulticastDNS
             ],
             relay: {                   // Circuit Relay options
                 enabled: true,           // Allows you to dial and accept relayed connections. Does not make you a relay.
