@@ -44,9 +44,10 @@
                 Gateway: '',
             },
             Swarm: {
+                EnableHolePunching: true,
                 RelayClient: {
                     Enabled: true,
-                    StaticRelays
+                    // StaticRelays
                 },
                 RelayService: {
                     Enabled: true
