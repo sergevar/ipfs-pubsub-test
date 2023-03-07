@@ -52,6 +52,7 @@
             "AutoNAT": {},
             Swarm: {
                 EnableHolePunching: true,
+                EnableAutoRelay: true,
                 RelayClient: {
                     Enabled: true,
                     // StaticRelays
