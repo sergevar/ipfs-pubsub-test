@@ -2,6 +2,7 @@
     const IPFS = await(await Function('return import("ipfs-core")')());
     const tcp = await(await Function('return import("@libp2p/tcp")')()).tcp;
     const gossipsub = await(await Function('return import("@chainsafe/libp2p-gossipsub")')()).gossipsub;
+    const floodsub = await(await Function('return import("@libp2p/floodsub")')()).floodsub;
     const mplex = await(await Function('return import("@libp2p/mplex")')()).mplex;
     const noise = await(await Function('return import("@chainsafe/libp2p-noise")')()).noise;
     const webRTCStar = await(await Function('return import("@libp2p/webrtc-star")')()).webRTCStar;
@@ -107,13 +108,14 @@
             streamMuxers: [mplex()],
             connectionEncryption: [noise()],
             // we add the Pubsub module we want
-            pubsub: new gossipsub({
-                allowPublishToZeroPeers: true,
-                fallbackToFloodsub: true,
-                emitSelf: true,
-                maxInboundStreams: 64,
-                maxOutboundStreams: 128
-            }),
+            // pubsub: new gossipsub({
+            //     allowPublishToZeroPeers: true,
+            //     fallbackToFloodsub: true,
+            //     emitSelf: true,
+            //     maxInboundStreams: 64,
+            //     maxOutboundStreams: 128
+            // }),
+            pubsub: floodsub(),
             datastore: undefined,
             nat: {enabled: true}
         }
@@ -139,5 +141,8 @@
         const peers = await node.swarm.peers(topic);
         const pubsubPeers = await node.pubsub.peers(topic);
         console.log('Swarm Peers: ', peers.length, 'PubsubPeers: ', pubsubPeers.length);
+
+        const id = await node.id();
+        console.log('ID: ', id.id);
     }, 2000);
 })();
