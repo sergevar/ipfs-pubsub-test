@@ -56,7 +56,7 @@
 
     // Subscribe to a topic
     const topic = 'applejuice';
-    const subscription = node.pubsub.subscribe(topic, (message) => {
+    const subscription = node.pubsub.subscribe(topic, {discover: true}, (message) => {
         console.log(`Received message "${message.data.toString('utf-8')}" on topic "${message.topic}"`);
     });
     console.log(`Subscribed to topic "${topic}"`);
