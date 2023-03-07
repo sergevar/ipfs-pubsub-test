@@ -32,6 +32,8 @@
                 // API: "/ip4/127.0.0.1/tcp/5012",
                 // Gateway: "/ip4/127.0.0.1/tcp/9191",
                 // RPC: "/ip4/127.0.0.1/tcp/4839",
+                API: '',
+                Gateway: '',
             },
             "Discovery": {
                 "MDNS": {
