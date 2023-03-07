@@ -37,6 +37,8 @@
                     "/ip4/0.0.0.0/udp/"+port+"/quic",
                     "/ip6/::/udp/"+port+"/quic"
                 ],
+                "Announce": [],
+                "AppendAnnounce": null,
                 "NoAnnounce": [],
                 // API: "/ip4/127.0.0.1/tcp/5012",
                 // Gateway: "/ip4/127.0.0.1/tcp/9191",
