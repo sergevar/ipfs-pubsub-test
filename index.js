@@ -40,7 +40,7 @@
                     // "/ip6/::/tcp/"+(port+1)+"/ws",
                     "/ip4/0.0.0.0/udp/"+port+"/quic",
                     "/ip6/::/udp/"+port+"/quic",
-                    "/dns4/wrtc-star1.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star",
+                    // "/dns4/wrtc-star1.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star",
                 ],
                 "Announce": [],
                 "AppendAnnounce": null,
@@ -114,7 +114,7 @@
                 // },
                 reservationManager: {    // the reservation manager creates reservations on discovered relays
                     enabled: true,         // enable the reservation manager, default: false
-                    // maxReservations: 1     // the maximum number of relays to create reservations on
+                    maxReservations: 5     // the maximum number of relays to create reservations on
                 },
                 active: true,
                 autoRelay: {
