@@ -116,14 +116,14 @@
             streamMuxers: [mplex()],
             connectionEncryption: [noise()],
             // we add the Pubsub module we want
-            pubsub: new gossipsub({
-                allowPublishToZeroPeers: true,
-                fallbackToFloodsub: true,
-                emitSelf: true,
-                maxInboundStreams: 64,
-                maxOutboundStreams: 128
-            }),
-            // pubsub: floodsub(),
+            // pubsub: new gossipsub({
+            //     allowPublishToZeroPeers: true,
+            //     fallbackToFloodsub: true,
+            //     emitSelf: true,
+            //     maxInboundStreams: 64,
+            //     maxOutboundStreams: 128
+            // }),
+            pubsub: floodsub(),
             datastore: undefined,
             nat: {enabled: true}
         }
