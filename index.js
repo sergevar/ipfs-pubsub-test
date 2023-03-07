@@ -36,6 +36,29 @@
             //     ]
             // },
             // transports: [tcp()],
+
+            relay: {                   // Circuit Relay options
+                enabled: true,           // Allows you to dial and accept relayed connections. Does not make you a relay.
+                hop: {
+                    enabled: true,         // Allows you to be a relay for other peers.
+                    timeout: 30 * 1000,    // Incoming hop requests must complete within this timeout
+                    applyConnectionLimits: true, // Apply data/duration limits to relayed connections (default: true)
+                    limit: {
+                        duration: 120 * 1000, // the maximum amount of ms a relayed connection can be open for
+                        data: BigInt(1 << 17), // the maximum amount of data that can be transferred over a relayed connection
+                    }
+                },
+                advertise: {
+                    enabled: true,         // Allows you to disable advertising the Hop service
+                    bootDelay: 15 * 60 * 1000, // Delay before HOP relay service is advertised on the network
+                    ttl: 30 * 60 * 1000    // Delay Between HOP relay service advertisements on the network
+                },
+                reservationManager: {    // the reservation manager creates reservations on discovered relays
+                    enabled: true,         // enable the reservation manager, default: false
+                    maxReservations: 1     // the maximum number of relays to create reservations on
+                }
+            },
+
             streamMuxers: [mplex()],
             connectionEncryption: [noise()],
             // we add the Pubsub module we want
