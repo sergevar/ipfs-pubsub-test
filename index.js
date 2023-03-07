@@ -35,6 +35,15 @@
                 API: '',
                 Gateway: '',
             },
+            Swarm: {
+                RelayClient: {
+                    Enabled: false,
+                    // StaticRelays
+                },
+                RelayService: {
+                    Enabled: true
+                }
+            },
             "Discovery": {
                 "MDNS": {
                     "Enabled": true,
