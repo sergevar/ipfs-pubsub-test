@@ -8,6 +8,8 @@
     "@libp2p/pubsub-peer-discovery": "^8.0.0",
     "@libp2p/tcp": "^6.1.2",
     "@libp2p/webrtc-star": "^6.0.0",
+    "@psf/bch-js": "^6.6.0",
+    "ipfs-coord": "^8.0.8",
     "ipfs-core": "^0.18.0",
     "libp2p": "^0.42.2",
     "orbit-db": "^0.29.0"
