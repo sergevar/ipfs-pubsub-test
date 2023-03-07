@@ -9,6 +9,8 @@
     const pubsubPeerDiscovery = await(await Function('return import("@libp2p/pubsub-peer-discovery")')()).pubsubPeerDiscovery;
     const KadDHT = await(await Function('return import("@libp2p/kad-dht")')()).KadDHT;
 
+    const bootstapNodes = require('../../config/bootstrap-circuit-relays')
+
     const randomNumber = (min, max) => { return Math.floor(Math.random() * (max - min + 1)) + min; }
 
     const nodeID = randomNumber(100, 500);
@@ -49,6 +51,7 @@
                 API: '',
                 Gateway: '',
             },
+            Bootstrap: bootstapNodes,
             "AutoNAT": {},
             Swarm: {
                 EnableHolePunching: true,
