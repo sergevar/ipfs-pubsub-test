@@ -4,6 +4,7 @@
     const gossipsub = await(await Function('return import("@chainsafe/libp2p-gossipsub")')()).gossipsub;
     const mplex = await(await Function('return import("@libp2p/mplex")')()).mplex;
     const noise = await(await Function('return import("@chainsafe/libp2p-noise")')()).noise;
+    const webRTCStar = await(await Function('return import("@libp2p/webrtc-star")')()).webRTCStar;
 
     const randomNumber = (min, max) => { return Math.floor(Math.random() * (max - min + 1)) + min; }
 
@@ -15,6 +16,12 @@
     const ipfsRepoPath = 'ipfs-repos/' + nodeID;
 
     // Create an IPFS node
+
+
+    const webRTC = webRTCStar({
+
+    })
+
 
     const node = await IPFS.create({
         repo: ipfsRepoPath,
@@ -36,7 +43,9 @@
             //     ]
             // },
             // transports: [tcp()],
-
+            peerDiscovery: [
+                webRTC.discovery
+            ],
             relay: {                   // Circuit Relay options
                 enabled: true,           // Allows you to dial and accept relayed connections. Does not make you a relay.
                 hop: {
