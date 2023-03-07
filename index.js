@@ -5,6 +5,7 @@
     const mplex = await(await Function('return import("@libp2p/mplex")')()).mplex;
     const noise = await(await Function('return import("@chainsafe/libp2p-noise")')()).noise;
     const webRTCStar = await(await Function('return import("@libp2p/webrtc-star")')()).webRTCStar;
+    const pubsubPeerDiscovery = await(await Function('return import("@libp2p/pubsub-peer-discovery")')()).pubsubPeerDiscovery;
 
     const randomNumber = (min, max) => { return Math.floor(Math.random() * (max - min + 1)) + min; }
 
@@ -53,9 +54,10 @@
             // },
             // transports: [tcp()],
             // peerDiscovery: [MulticastDNS],
-            // peerDiscovery: [
-            //     webRTC.discovery
-            // ],
+            peerDiscovery: [
+                pubsubPeerDiscovery()
+                // webRTC.discovery
+            ],
             relay: {                   // Circuit Relay options
                 enabled: true,           // Allows you to dial and accept relayed connections. Does not make you a relay.
                 hop: {
