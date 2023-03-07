@@ -114,7 +114,8 @@
                 // },
                 reservationManager: {    // the reservation manager creates reservations on discovered relays
                     enabled: true,         // enable the reservation manager, default: false
-                    maxReservations: 5     // the maximum number of relays to create reservations on
+                    maxReservations: 5,     // the maximum number of relays to create reservations on
+                    maxListeners: 3,        // the maximum number of listeners to create per relay
                 },
                 active: true,
                 autoRelay: {
