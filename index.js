@@ -84,6 +84,12 @@
                 webRTC.discovery,
                 // MulticastDNS
             ],
+            dht: {
+                enabled: true,
+                randomWalk: {
+                    enabled: true
+                }
+            },
             relay: {                   // Circuit Relay options
                 enabled: true,           // Allows you to dial and accept relayed connections. Does not make you a relay.
                 hop: {
