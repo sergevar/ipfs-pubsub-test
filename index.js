@@ -109,12 +109,12 @@
                 },
                 reservationManager: {    // the reservation manager creates reservations on discovered relays
                     enabled: true,         // enable the reservation manager, default: false
-                    maxReservations: 1     // the maximum number of relays to create reservations on
+                    // maxReservations: 1     // the maximum number of relays to create reservations on
                 },
                 active: true,
                 autoRelay: {
                     enabled: true,
-                    maxListeners: 3
+                    // maxListeners: 3
                 },
             },
             dht: KadDHT,
