@@ -23,6 +23,7 @@
 
     })
 
+    let StaticRelays = [];
 
     const node = await IPFS.create({
         repo: ipfsRepoPath,
@@ -37,8 +38,8 @@
             },
             Swarm: {
                 RelayClient: {
-                    Enabled: false,
-                    // StaticRelays
+                    Enabled: true,
+                    StaticRelays
                 },
                 RelayService: {
                     Enabled: true
