@@ -47,6 +47,7 @@
                 API: '',
                 Gateway: '',
             },
+            "AutoNAT": {},
             Swarm: {
                 EnableHolePunching: true,
                 RelayClient: {
