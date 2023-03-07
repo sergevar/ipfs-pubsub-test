@@ -37,7 +37,8 @@
                     "/ip4/0.0.0.0/tcp/"+(port+1)+"/ws",
                     // "/ip6/::/tcp/"+(port+1)+"/ws",
                     "/ip4/0.0.0.0/udp/"+port+"/quic",
-                    "/ip6/::/udp/"+port+"/quic"
+                    "/ip6/::/udp/"+port+"/quic",
+                    "/dns4/wrtc-star1.par.dwebops.pub/tcp/443/wss/p2p-webrtc-star",
                 ],
                 "Announce": [],
                 "AppendAnnounce": null,
